@@ -36,7 +36,7 @@ function indent() {
 # Config
 # Hardcoded available stable versions
 # Use it to manually update the version as per https://firefox-source-docs.mozilla.org/testing/geckodriver/Support.html
-VERSION_FIREFOX=135.0
+VERSION_FIREFOX=134.0
 VERSION_GECKODRIVER=0.35.0
 LANG=en-US
 PLATFORM=linux64
@@ -49,36 +49,36 @@ FILE_NAME_GECKODRIVER=${ARCHIVE_NAME_GECKODRIVER}-v${VERSION_GECKODRIVER}-${PLAT
 BUILDPACK_FIREFOX_PACKAGE="https://download.mozilla.org/?product=firefox-${VERSION_FIREFOX}-SSL&os=${PLATFORM}&lang=${LANG}"
 BUILDPACK_GECKODRIVER_PACKAGE="https://github.com/mozilla/geckodriver/releases/download/v${VERSION_GECKODRIVER}/${FILE_NAME_GECKODRIVER}"
 
-# Install correct dependencies according to $STACK	
-case "$STACK" in	
+# Install correct dependencies according to $STACK
+case "$STACK" in
   "heroku-24" | "heroku-22" | "heroku-20" | "heroku-18" | "heroku-16")
-    PACKAGES="	
-      libappindicator1	
-      libasound2	
-      libatk1.0-0	
-      libatk-bridge2.0-0	
-      libcairo-gobject2	
-      libgconf-2-4	
-      libgtk-3-0	
-      libice6	
-      libnspr4	
-      libnss3	
-      libsm6	
-      libx11-xcb1	
-      libxcomposite1	
-      libxcursor1	
-      libxdamage1	
-      libxfixes3	
-      libxi6	
-      libxinerama1	
-      libxrandr2	
-      libxss1	
-      libxt6	
-      libxtst6	
-      fonts-liberation	
+    PACKAGES="
+      libappindicator1
+      libasound2
+      libatk1.0-0
+      libatk-bridge2.0-0
+      libcairo-gobject2
+      libgconf-2-4
+      libgtk-3-0
+      libice6
+      libnspr4
+      libnss3
+      libsm6
+      libx11-xcb1
+      libxcomposite1
+      libxcursor1
+      libxdamage1
+      libxfixes3
+      libxi6
+      libxinerama1
+      libxrandr2
+      libxss1
+      libxt6
+      libxtst6
+      fonts-liberation
     "
-    ;;	
-  *)	
+    ;;
+  *)
     error "Must be on a supported Heroku version: heroku-24, heroku-22, heroku-20, heroku-18, heroku-16"
 esac
 
